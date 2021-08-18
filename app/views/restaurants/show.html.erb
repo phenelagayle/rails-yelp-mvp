@@ -19,3 +19,14 @@
   <strong>Phone Number:</strong>
   <%= @restaurant.phone_number %>
 </p>
+
+<ul class='list-group'>
+  <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item">
+      <%= review.content %>
+      <%= review.rating %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Add a new review', new_restaurant_review_path(@restaurant) %>
